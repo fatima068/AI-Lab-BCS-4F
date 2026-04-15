@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smile version="1.0" id="Network1">
+	<nodes>
+
+		<cpt id="Intelligence">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+
+		<cpt id="StudyHours">
+			<state id="Sufficient" />
+			<state id="Insufficient" />
+			<probabilities>0.6 0.4</probabilities>
+		</cpt>
+
+		<cpt id="Difficulty">
+			<state id="Hard" />
+			<state id="Easy" />
+			<probabilities>0.4 0.6</probabilities>
+		</cpt>
+
+		<cpt id="Grade">
+			<state id="A" />
+			<state id="B" />
+			<state id="C" />
+			<parents>Intelligence StudyHours Difficulty</parents>
+
+			<probabilities>
+				0.6 0.3 0.1
+				0.9 0.08 0.02
+				0.3 0.4 0.3
+				0.6 0.3 0.1
+				0.2 0.4 0.4
+				0.5 0.35 0.15
+				0.05 0.25 0.7
+				0.2 0.4 0.4
+			</probabilities>
+		</cpt>
+
+		<cpt id="Pass">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Grade</parents>
+			<probabilities>
+				0.95 0.05
+				0.8 0.2
+				0.5 0.5
+			</probabilities>
+		</cpt>
+
+	</nodes>
+</smile>
